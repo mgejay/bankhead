@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaywhizzy’s Hub</title>
+  <style>
+    :root {
+      --bg:#000;
+      --card:#111;
+      --muted:#aaa;
+      --text:#fff;
+      --border:#222;
+    }
+    body {
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+      margin:0;
+      padding:40px 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+    h1 {
+      font-size:2.4rem;
+      font-weight:800;
+      margin-bottom:10px;
+      color:var(--text);
+    }
+    .subtitle {
+      color:var(--muted);
+      margin-bottom:36px;
+      font-style:italic;
+    }
+    .nav-cards {
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      width:100%;
+      max-width:640px;
+    }
+    .card {
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      text-decoration:none;
+      color:var(--text);
+      text-align:left;
+      transition:transform .2s ease, border-color .2s ease;
+      box-shadow:0 6px 16px rgba(0,0,0,.25);
+    }
+    .card:hover {
+      transform:translateY(-4px);
+      border-color:#fff;
+    }
+    .card h2 {
+      margin:0 0 6px;
+      font-size:1.4rem;
+    }
+    .card p {
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jaywhizzy’s Hub</h1>
+  <p class="subtitle">Choose a list to explore</p>
+
+  <div class="nav-cards">
+    <a href="weaponslist.html" class="card">
+      <h2>⚔ Weapons List</h2>
+      <p>Browse all weapons and ammo with spawn codes</p>
+    </a>
+    <a href="drugscamming.html" class="card">
+      <h2>💊 Drugs &amp; Scamming Items</h2>
+      <p>View drug spawn codes and scamming item list</p>
+    </a>
+  </div>
+</body>
+</html>
