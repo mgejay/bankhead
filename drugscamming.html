@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Drugs &amp; Scamming (List Only)</title><style>
+:root { --bg:#000; --card:#111; --muted:#aaa; --text:#fff; --border:#222; }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;margin:0;padding:32px 20px;}
+h1{font-size:2rem;font-weight:800;margin:0 0 6px}
+.subtitle{margin:0 0 20px;color:var(--muted);font-style:italic}
+.topbar{position:sticky;top:0;backdrop-filter:blur(8px);background:rgba(0,0,0,.9);padding:12px 16px;border:1px solid var(--border);border-radius:14px;margin-bottom:20px;display:flex;gap:10px;align-items:center;z-index:10}
+.topbar input{flex:1;min-width:220px;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:#111;color:var(--text)}
+.tabs{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.tab-button{padding:8px 14px;background:#111;border:1px solid var(--border);border-radius:999px;color:var(--text);cursor:pointer}
+.tab-button.active{background:#fff;color:#000;font-weight:800}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+.name{font-weight:700}
+.code{opacity:.9}
+.spawn{color:#ff3030;font-weight:800}
+.hide-by-filter{display:none!important}
+</style></head><body><script>
+function showTab(id, el){
+  document.querySelectorAll('.tab-content').forEach(d=>d.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-button').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('filter').value='';
+  applyFilter();
+}
+function norm(s){ return (s||'').toLowerCase(); }
+function applyFilter(){
+  const q = norm(document.getElementById('filter').value);
+  const active = document.querySelector('.tab-content.active');
+  const items = active ? Array.from(active.querySelectorAll('.item')) : [];
+  if(!q){ items.forEach(x=>x.classList.remove('hide-by-filter')); return; }
+  items.forEach(x=>{
+    const t = norm(x.innerText);
+    if(t.includes(q)) x.classList.remove('hide-by-filter'); else x.classList.add('hide-by-filter');
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('filter').addEventListener('input', applyFilter);
+});
+</script><div class="topbar"><label for="filter">Quick filter:</label><input id="filter" placeholder="Search within current tab..." type="text"/></div><h1>Drugs &amp; Scamming Items — List Only</h1><p class="subtitle">by jaywhizzy :)</p><div class="tabs"><button class="tab-button active" onclick="showTab('drugs', this)">Drugs</button><button class="tab-button" onclick="showTab('scam', this)">Scamming Items</button></div><div class="tab-content active" id="drugs"><div class="list"><div class="item"><span class="name">Acid Tabs</span><span class="code">( <span class="spawn">acidtabs</span> )</span></div><div class="item"><span class="name">Angel Dust</span><span class="code">( <span class="spawn">angeldus</span> )</span></div><div class="item"><span class="name">Black Tar (Heroin)</span><span class="code">( <span class="spawn">blacktar</span> )</span></div><div class="item"><span class="name">Blue Rhino</span><span class="code">( <span class="spawn">bluerhino</span> )</span></div><div class="item"><span class="name">Blue Tesla</span><span class="code">( <span class="spawn">bluetesla</span> )</span></div><div class="item"><span class="name">Blues</span><span class="code">( <span class="spawn">blues</span> )</span></div><div class="item"><span class="name">Boss Fentanyl</span><span class="code">( <span class="spawn">bossfent</span> )</span></div><div class="item"><span class="name">Cocaine</span><span class="code">( <span class="spawn">coke</span> )</span></div><div class="item"><span class="name">Crack</span><span class="code">( <span class="spawn">crack</span> )</span></div><div class="item"><span class="name">Crystal Meth</span><span class="code">( <span class="spawn">crystalmeth</span> )</span></div><div class="item"><span class="name">E-pills</span><span class="code">( <span class="spawn">epills</span> )</span></div><div class="item"><span class="name">Fentanyl</span><span class="code">( <span class="spawn">fentanyl</span> )</span></div><div class="item"><span class="name">Flakka</span><span class="code">( <span class="spawn">flakka</span> )</span></div><div class="item"><span class="name">Galaxy Gas</span><span class="code">( <span class="spawn">galaxygas</span> )</span></div><div class="item"><span class="name">Green Lean</span><span class="code">( <span class="spawn">greendrank</span> )</span></div><div class="item"><span class="name">Hi-Tech Red</span><span class="code">( <span class="spawn">hitech</span> )</span></div><div class="item"><span class="name">Lionex</span><span class="code">( <span class="spawn">lionex</span> )</span></div><div class="item"><span class="name">LSD</span><span class="code">( <span class="spawn">lsd</span> )</span></div><div class="item"><span class="name">LSD Tabs</span><span class="code">( <span class="spawn">lsd-tabs</span> )</span></div><div class="item"><span class="name">MDMA</span><span class="code">( <span class="spawn">mdma</span> )</span></div><div class="item"><span class="name">Party Pak</span><span class="code">( <span class="spawn">partypak</span> )</span></div><div class="item"><span class="name">PCP</span><span class="code">( <span class="spawn">pcp</span> )</span></div><div class="item"><span class="name">Perc 15 Bottle</span><span class="code">( <span class="spawn">perc_15_bottle</span> )</span></div><div class="item"><span class="name">Perc 5 Bottle</span><span class="code">( <span class="spawn">perc_5_bottle</span> )</span></div><div class="item"><span class="name">Percocet</span><span class="code">( <span class="spawn">percocet2</span> )</span></div><div class="item"><span class="name">Percocets</span><span class="code">( <span class="spawn">percocet</span> )</span></div><div class="item"><span class="name">Pink Molly</span><span class="code">( <span class="spawn">pinkmolly</span> )</span></div><div class="item"><span class="name">Promethazine</span><span class="code">( <span class="spawn">promethazine</span> )</span></div><div class="item"><span class="name">Reap Pills</span><span class="code">( <span class="spawn">reappills</span> )</span></div><div class="item"><span class="name">Roxys</span><span class="code">( <span class="spawn">roxys</span> )</span></div><div class="item"><span class="name">Shrooms</span><span class="code">( <span class="spawn">shrooms</span> )</span></div><div class="item"><span class="name">SMP-X</span><span class="code">( <span class="spawn">smpx</span> )</span></div><div class="item"><span class="name">StackPacks</span><span class="code">( <span class="spawn">stackpacks</span> )</span></div><div class="item"><span class="name">Weed</span><span class="code">( <span class="spawn">weed_leaf</span> )</span></div><div class="item"><span class="name">X Pills</span><span class="code">( <span class="spawn">ecstasy</span> )</span></div><div class="item"><span class="name">Za Pounds</span><span class="code">( <span class="spawn">zapounds</span> )</span></div><div class="item"><span class="name">Zone 6</span><span class="code">( <span class="spawn">zone6</span> )</span></div></div></div><div class="tab-content" id="scam"><div class="list"><div class="item"><span class="name">Blank Card</span><span class="code">( <span class="spawn">blank</span> )</span></div><div class="item"><span class="name">Burner Phone</span><span class="code">( <span class="spawn">burnerphone</span> )</span></div><div class="item"><span class="name">Check Paper</span><span class="code">( <span class="spawn">checkpaper</span> )</span></div><div class="item"><span class="name">Cloned Card</span><span class="code">( <span class="spawn">ccard</span> )</span></div><div class="item"><span class="name">Empty Sim Card</span><span class="code">( <span class="spawn">simcard</span> )</span></div><div class="item"><span class="name">Forged Check</span><span class="code">( <span class="spawn">fcheck</span> )</span></div><div class="item"><span class="name">Laptop</span><span class="code">( <span class="spawn">laptop</span> )</span></div><div class="item"><span class="name">MSR</span><span class="code">( <span class="spawn">msr</span> )</span></div><div class="item"><span class="name">Printer</span><span class="code">( <span class="spawn">printer</span> )</span></div><div class="item"><span class="name">Swapped Sim Card</span><span class="code">( <span class="spawn">sim</span> )</span></div></div></div></body></html>
